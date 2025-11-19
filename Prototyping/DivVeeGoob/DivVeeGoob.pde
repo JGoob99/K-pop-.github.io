@@ -1,7 +1,7 @@
 /* DIVs: 2D Rectangles
 */
 //
-fullScreen(); //dispalyWidth //displayHeight
+fullScreen(); //displayWidth //displayHeight
 println(displayWidth, displayHeight);
 int appWidth = displayWidth;
 int appHeight = displayHeight;
@@ -28,6 +28,18 @@ float forwardY = appHeight * 11.1/13.7;
 float forwardWidth = appWidth * 1.7/19.3;
 float forwardHeight = appHeight * 2.6/13.7;
 
+float forward2X = appWidth * 11.87/19.3;
+float forward2Y = appHeight * 11.75/13.7;
+float forward2Width = appWidth * 0.35/19.3;
+float forward2Height = appHeight * 1.4/13.7;
+
+float forwardX1 = forwardX + forwardWidth * 1/4;
+float forwardY1 = forwardY + forwardHeight * 1/4;
+float forwardX2 = forwardX + forwardWidth * 5/8;
+float forwardY2 = forwardY + forwardHeight * 1/2;
+float forwardX3 = forwardX + forwardWidth * 1/4;
+float forwardY3 = forwardY + forwardHeight * 3/4;
+
 float reverseX = appWidth * 9/19.3;
 float reverseY = appHeight * 11.1/13.7;
 float reverseWidth = appWidth * 1.8/19.3;
@@ -42,6 +54,20 @@ float fastforwardX = appWidth * 17.6/19.3;
 float fastforwardY = appHeight * 11.1/13.7;
 float fastforwardWidth = appWidth * 1.7/19.3;
 float fastforwardHeight = appHeight * 2.6/13.7;
+
+float fastforwardX1 = fastforwardX + fastforwardWidth * 1/4;
+float fastforwardY1 = fastforwardY + fastforwardHeight * 1/4;
+float fastforwardX2 = fastforwardX + fastforwardWidth * 1/2;
+float fastforwardY2 = fastforwardY + fastforwardHeight * 1/2;
+float fastforwardX3 = fastforwardX + fastforwardWidth * 1/4;
+float fastforwardY3 = fastforwardY + fastforwardHeight * 3/4;
+
+float fastforward2X1 = fastforwardX + fastforwardWidth * 1/2;
+float fastforward2Y1 = fastforwardY + fastforwardHeight * 1/4;
+float fastforward2X2 = fastforwardX + fastforwardWidth * 3/4;
+float fastforward2Y2 = fastforwardY + fastforwardHeight * 1/2;
+float fastforward2X3 = fastforwardX + fastforwardWidth * 1/2;
+float fastforward2Y3 = fastforwardY + fastforwardHeight * 3/4;
 
 float colourwheelX = appWidth * 6.25/19.3;
 float colourwheelY = appHeight * 11.1/13.7;
@@ -121,6 +147,7 @@ float searchHeight = appHeight * 0.7/13.7;
 rect(imageX, imageY, imageWidth, imageHeight);
 rect(muteX, muteY, muteWidth, muteHeight);
 rect(forwardX,forwardY, forwardWidth, forwardHeight);
+rect(forward2X, forward2Y, forward2Width, forward2Height);
 rect(reverseX, reverseY, reverseWidth, reverseHeight);
 rect(pauseX, pauseY, pauseWidth, pauseHeight);
 rect(fastforwardX, fastforwardY, fastforwardWidth, fastforwardHeight);
@@ -141,3 +168,6 @@ rect(exitX, exitY, exitWidth, exitHeight);
 rect(searchX, searchY, searchWidth, searchHeight);
 //
 triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+triangle(fastforwardX1, fastforwardY1, fastforwardX2, fastforwardY2, fastforwardX3, fastforwardY3);
+triangle(fastforward2X1, fastforward2Y1, fastforward2X2, fastforward2Y2, fastforward2X3, fastforward2Y3);
+triangle(forwardX1, forwardY1, forwardX2, forwardY2, forwardX3, forwardY3);
