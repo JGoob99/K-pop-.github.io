@@ -3,11 +3,11 @@
 */
 //
 //Display
-//fullScreen(); //Landscape
-size(500, 700); //Portrait
+fullScreen(); //Landscape
+//size(500, 700); //Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
-println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen,displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
+//println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen,displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
 float imageDivX = appWidth*1.9/19.3;
@@ -18,19 +18,21 @@ float imageDivHeight = appHeight*7.85/13.7;
 //Image Aspect Ratio Vars & Algorithm
 //Directory or Pathway, Concatenation
 String upArrow = "../../";
-String folder = "Images";
-String sunflower = "sunflower";
+String folder = "Images/";
+String Sunflower_sky_backdrop = "Sunflower_sky_backdrop";
 String fileExtensionJPG = ".jpg";
-String imagePathway1 = upArrow + folder + sunflower + fileExtensionJPG;
-//println("Sunflower Pathway:", imagePathway1);
+String imagePathway1 = upArrow + folder + Sunflower_sky_backdrop + fileExtensionJPG;
+//println("Sunflower_sky_backdrop Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
 PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 800; //Hardcoded
 int imageHeight1 = 886; //Hardcoded
 //Aspect Ratio
-//float image1AspectRatio_GreaterOne = () ? : ;
-//
+float image1AspectRatio_GreaterOne = ( imageWidth1 <= imageHeight1 ) ? imageHeight1/imageWidth1 : imageWidth1/imageHeight1; //Ternary Operator
+//Hardcoded Greater-Than-One Aspect Ratio
+println(image1AspectRatio_GreaterOne);
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
-image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
+image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+//image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
