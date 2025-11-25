@@ -28,9 +28,23 @@ PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 800; //Hardcoded
 int imageHeight1 = 886; //Hardcoded
 //Aspect Ratio
-float image1AspectRatio_GreaterOne = ( imageWidth1 <= imageHeight1 ) ? imageHeight1/imageWidth1 : imageWidth1/imageHeight1; //Ternary Operator
+float image1AspectRatio_GreaterOne = ( imageWidth1 <= imageHeight1 ) ? float(imageHeight1)/float(imageWidth1) : float(imageWidth1/imageHeight1) ; //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Ratio
-println(image1AspectRatio_GreaterOne);
+println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, formuale", imageHeight1/imageWidth1);
+//Algorithm Decisions (choice)
+//Aspect Ratio
+/*
+imageWidth1
+imageDivWidth
+imageHeight1
+imageDivHeight
+imageDivWidth, imageDivHeight
+*/
+//if () {} else {} //End IF Aspect Ratio
+
+
+
+
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
