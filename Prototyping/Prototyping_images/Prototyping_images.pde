@@ -33,22 +33,15 @@ float image1AspectRatio_GreaterOne = ( imageWidth1 <= imageHeight1 ) ? float(ima
 println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, formuale", imageHeight1/imageWidth1);
 //Algorithm Decisions (choice)
 float imageWidthAdjusted1 = imageDivWidth;
-float imageHeightAdjusted = ( imageWidth1 <= imageDivWidth ) ? imageWidthAdjusted1 / image1AspectRatio_GreaterOne : imageWidthAdjusted1 * image1AspectRatio_GreaterOne ; //Ternary Operator
+float imageHeightAdjusted1 = ( imageWidth1 <= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
 
-//Aspect Ratio
-/*
-imageWidth1
-imageDivWidth
-imageHeight1
-imageDivHeight
-imageDivWidth, imageDivHeight
-*/
-//if () {} else {} //End IF Aspect Ratio
+//if (imageHeightChanged1>imageDivHeight) {
+//} else {} //End IF Aspect Ratio
 
 
 
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
-image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
-//image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
+//image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+image( image1, imageDivX, imageDivY, imageWidthAdjusted1, imageHeightAdjusted1 );
