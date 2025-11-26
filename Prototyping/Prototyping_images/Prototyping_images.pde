@@ -32,6 +32,9 @@ float image1AspectRatio_GreaterOne = ( imageWidth1 <= imageHeight1 ) ? float(ima
 //Hardcoded Greater-Than-One Aspect Ratio
 println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, formuale", imageHeight1/imageWidth1);
 //Algorithm Decisions (choice)
+float imageWidthAdjusted1 = imageDivWidth;
+float imageHeightAdjusted = ( imageWidth1 <= imageDivWidth ) ? imageWidthAdjusted1 / image1AspectRatio_GreaterOne : imageWidthAdjusted1 * image1AspectRatio_GreaterOne ; //Ternary Operator
+
 //Aspect Ratio
 /*
 imageWidth1
@@ -41,7 +44,6 @@ imageDivHeight
 imageDivWidth, imageDivHeight
 */
 //if () {} else {} //End IF Aspect Ratio
-
 
 
 
