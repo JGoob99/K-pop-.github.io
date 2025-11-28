@@ -3,11 +3,12 @@
 */
 //
 //Display
-fullScreen(); //Landscape
-//size(500, 700); //Portrait
-int appWidth = displayWidth; //width
-int appHeight = displayHeight; //height
-//println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreen,displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
+//fullScreen(); //Landscape
+size(500, 700); //Portrait
+int appWidth = width; //displayWidth
+int appHeight = height; //displayHeight
+//println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
+//println("\n\t\t\t\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
 float imageDivX = appWidth*1.9/19.3;
@@ -47,11 +48,35 @@ float imageHeightAdjusted1 = ( imageWidth1 <= imageDivWidth ) ? imageWidthAdjust
 if ( imageHeightAdjusted1 > imageDivHeight ) {
   println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
   //exit();
+  int indexWhile = 0; //Local Variable to IF-Statement
+  //** WHILE Loops can run infinitely with an error if not controlled
   while ( imageHeightAdjusted1>imageDivHeight ) {
-  imageWidthAdjusted1 *= 0.99;
+    println("Iteration of Percent WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
+    if ( indexWhile < 10000 ) {
+      //Checking Image Size
+    } else {
+      //ERROR: Infinite Loop
+      println("ERROR: infinite loop, Image Percent WHILE, value:", indexWhile);
+      exit(); //doesnt work, must force WHILE Stop
+      imageHeightAdjusted1=imageDivHeight; //makes WHILE False, stops WHILE
+    } //End Check Infinite loop
+    //Image Adjustment Percent v Pixel
+  imageWidthAdjusted1 *= 0.70// -= 1
   imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
-  //
-}
+  println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight); 
+} //End WHILE
+while ( imageHeightAdjusted1=imageDivHeight ) {
+  println("Iteration of Pixel WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
+  if ( indexWhile < 10000 ) {
+    //Checking Image Size
+  } else {
+    //ERROR: Infinite Loop
+    println("ERROR: infinite loop, Image Pixel WHILE, value:", indexWhile);
+    //exit(); //doesn't work, must force WHILE Stop
+    imageHeightAdjusted1=imageDivHeight;
+  }
+  imageHeightAdjusted++;
+  println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeghtAdjusted1, imageDivHeight);
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
