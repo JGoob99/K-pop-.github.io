@@ -24,7 +24,17 @@ String fileExtensionJPG = ".jpg";
 String imagePathway1 = upArrow + folder + Sunflower_sky_backdrop + fileExtensionJPG;
 //println("Sunflower_sky_backdrop Pathway:", imagePathway1);
 //Image Loading & Aspect Ratio
-PImage image1 = loadImage( imagePathway1 );
+//
+//Possible ERROR: NullPointerException
+PImage errorImage = loadImage( "errorimage.png" );
+PImage image1 = loadImage( imagePathway1 ); //i.e. pathway mispelled
+if ( image1 == null ) {
+   println("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation");
+   image1 = errorImage;
+   //exit();
+   //
+}
+//
 int imageWidth1 = 800; //Hardcoded
 int imageHeight1 = 886; //Hardcoded
 //Aspect Ratio
@@ -34,12 +44,14 @@ println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, 
 //Algorithm Decisions (choice)
 float imageWidthAdjusted1 = imageDivWidth;
 float imageHeightAdjusted1 = ( imageWidth1 <= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ; //Ternary Operator
-
-//if (imageHeightChanged1>imageDivHeight) {
-//} else {} //End IF Aspect Ratio
-
-
-
+if ( imageHeightAdjusted1 > imageDivHeight ) {
+  println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image doesn't show.");
+  //exit();
+  while ( imageHeightAdjusted1>imageDivHeight ) {
+  imageWidthAdjusted1 *= 0.99;
+  imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
+  //
+}
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
