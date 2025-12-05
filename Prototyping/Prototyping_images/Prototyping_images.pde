@@ -9,7 +9,7 @@ fullScreen(); //Landscape
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
 //println("Display VARS:", "appWidth:"+appWidth, "appHeight:"+appHeight);
-//println("\n\t\t\t\t\t\t\tFullScreen, displayWidth:\t"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
+//println("\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
 float VeeX = appWidth*1.9/19.3;
