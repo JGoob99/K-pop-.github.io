@@ -24,11 +24,19 @@ String title = "Yippee";
  String[] fontList = PFont.list(); //To list all fonts available on system
  printArray(fontList); //For listing all possible fonts to choose, then createFont
  */
-int fontSize = 55; //Entire Program
+float fontSize = 55; //Entire Program
 PFont titleFont; //Font Var name
-String Comic Sans MS = "Comic Sans MS";
-titleFont = createFont (Cosmic Sans MS, );
+String Georgia = "Georgia";
+titleFont = createFont (Georgia, fontSize);
+//Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadfont() and createfont()
+//
+println(fontSize, Georgia, titleFont);
+//
 //Note: DIV to "see" variables
 rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
 //
+color cyanInk = #00F2C8; //Hexidecimal
+fill(cyanInk); //Ink, Grey Scale 0-255
+textFont(titleFont, fontSize); //see variable note
+//textFont() has option to combine font declaration with textSize()
 text( title, VeeX, VeeY, DivVeeWidth, DivVeeWidth );
