@@ -17,9 +17,18 @@ float DivVeeHeight = appHeight*7.85/13.7;
 //
 //Strings, Text, Literal
 String title = "Yippee";
-// Student enter all test from Case Study
-//
+// Students enter all test from Case Study
+
+/*Fonts from OS
+ println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
+ String[] fontList = PFont.list(); //To list all fonts available on system
+ printArray(fontList); //For listing all possible fonts to choose, then createFont
+ */
+int fontSize = 55; //Entire Program
+PFont titleFont; //Font Var name
+String Comic Sans MS = "Comic Sans MS";
+titleFont = createFont (Cosmic Sans MS, );
 //Note: DIV to "see" variables
-rect( VeeX, VeeY, DivVeeWidth, DivVeeWidth );
+rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
 //
 text( title, VeeX, VeeY, DivVeeWidth, DivVeeWidth );
