@@ -31,7 +31,7 @@ titleFont = createFont (Georgia, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadfont() and createfont()
 //
 println(fontSize, Georgia, titleFont);
-float fontSizeGeorgia = 300;
+float fontSizeGeorgia = 200;
 //Hardcoded fontsizeGeorgia
 println("Font Size:", fontSize );
 /* Aspect Ratio Manipulations (change to variables)
@@ -47,7 +47,13 @@ println("Font Size:", fontSize );
 rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
 //
 color cyanInk = #00F2C8; //Hexidecimal
+color whiteInk = #FFFFFF; //Grey Scale is 255
+color resetInk = whiteInk;
 fill(cyanInk); //Ink, Grey Scale 0-255
+textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/Reference
+//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+//
 textFont(titleFont, fontSize); //see variable note
 //textFont() has option to combine font declaration with textSize()
-text( title, VeeX, VeeY, DivVeeWidth, DivVeeWidth );
+text( title, VeeX, VeeY, DivVeeWidth, DivVeeHeight );
+fill(resetInk);
