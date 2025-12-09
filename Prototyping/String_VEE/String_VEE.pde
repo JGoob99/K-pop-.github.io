@@ -24,13 +24,24 @@ String title = "Yippee";
  String[] fontList = PFont.list(); //To list all fonts available on system
  printArray(fontList); //For listing all possible fonts to choose, then createFont
  */
-float fontSize = 55; //Entire Program
+float fontSize = appHeight; //Entire Program
 PFont titleFont; //Font Var name
 String Georgia = "Georgia";
 titleFont = createFont (Georgia, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadfont() and createfont()
 //
 println(fontSize, Georgia, titleFont);
+float fontSizeGeorgia = 300;
+//Hardcoded fontsizeGeorgia
+println("Font Size:", fontSize );
+/* Aspect Ratio Manipulations (change to variables)
+ - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
+ - Rewriting fontSize with formulae
+ */
+ float georgiaAspectRatio = fontSizeGeorgia / DivVeeHeight;
+ fontSize = DivVeeHeight*georgiaAspectRatio;
+ println("Georgia Aspect Ratio:", georgiaAspectRatio);
+ println(); //Skip a line
 //
 //Note: DIV to "see" variables
 rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
