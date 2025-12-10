@@ -10,10 +10,19 @@ int appHeight = displayHeight; //height
 //println("\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
+float[] DivVeeWidth = new float[3];
 float VeeX = appWidth*1.9/19.3;
 float VeeY = appHeight*0.55/13.7;
-float DivVeeWidth = appWidth*9.4/19.3;
+DivVeeWidth[1] = appWidth*9.4/19.3;
 float DivVeeHeight = appHeight*7.85/13.7;
+float VeeX2 = appWidth * 1.9/19.3;
+float VeeY2 = appHeight * 10.15/13.7;
+DivVeeWidth[2] = appWidth * 9.4/19.3;
+float DivVeeHeight2 = appHeight * 0.95/13.7;
+float VeeX3 = appWidth * 1.9/19.3;
+float VeeY3 = appHeight * 8.4/13.7;
+DivVeeWidth[3] = appWidth * 9.4/19.3;
+float DivVeeHeight3 = appHeight * 1.75/13.7;
 //
 //Strings, Text, Literal
 String title = "Yippee";
@@ -45,6 +54,8 @@ println(); //Skip a line
 //
 //Note: DIV to "see" variables
 rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
+rect( VeeX2, VeeY2, DivVeeWidth2, DivVeeHeight2 );
+rect( VeeX3, VeeY3, DivVeeWidth3, DivVeeHeight3 );
 //
 //Drawing Text
 color cyanInk = #00F2C8; //Hexidecimal
@@ -56,15 +67,20 @@ textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/Reference
 //ERROR Check fontSize, decreasing the text when wrapped or not shown
 textFont(titleFont, fontSize); //see variable note
 float constantDecrease = 0.99; //99% of original or 1% decrease
-while ( textWidth( title ) > DivVeeWidth ) {
+//FOR Loop Error, Copy * Paste three times
+for ( int i=0; i<3; i++ ) {
+  while ( textWidth( title ) > DivVeeWidth[i] ) {
   //ERROR: infinite loop, requires exit() & println()
   fontSize *= constantDecrease; //Assignment Operator  //fontSize = fontSize*0.99;
   textFont(titleFont, fontSize); //see variable note
-} //End WHILE Error Check Text-wrap
-
+  } //End WHILE Error Check Text-wrap
+} //End FOR Loop, Font Size Check in DIVs
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont() is better for more than one PFont Variable
 //
-text( title, VeeX, VeeY, DivVeeWidth, DivVeeHeight );
+for ( int 1=o; i<3; i++) {
+text( title, VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
+text( title, VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
+text( title, VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
 fill(resetInk);
