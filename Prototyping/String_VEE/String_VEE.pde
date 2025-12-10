@@ -55,9 +55,10 @@ textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/Reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 //ERROR Check fontSize, decreasing the text when wrapped or not shown
 textFont(titleFont, fontSize); //see variable note
-float constrantDecrease = 0.99; //99% of original or 1% decrease
+float constantDecrease = 0.99; //99% of original or 1% decrease
 while ( textWidth( title ) > DivVeeWidth ) {
   //ERROR: infinite loop, requires exit() & println()
+  fontSize *= constantDecrease; //Assignment Operator  //fontSize = fontSize*0.99;
   textFont(titleFont, fontSize); //see variable note
 } //End WHILE Error Check Text-wrap
 
