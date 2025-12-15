@@ -25,9 +25,11 @@ DivVeeWidth[2] = appWidth*9.4/19.3;
 DivVeeHeight[2] = appHeight*1.75/13.7;
 //
 //Strings, Text, Literal
-String title = "Yippee";
+String[] text = new String[numberOfDIVs];
+text[0] = "Noah Schnapp, Finn Wolfhard, Caleb Sinclair, Steve, Johnathan, Hopper, Joyce, Nancy, Dusty buns x Suzie poo";
+text[1] = "Life is roblox";
+text[2] = " Stranger Thing season 5 is out :D";
 // Students enter all text from Case Study
-
 /*Fonts from OS
  println("Start of Console"); //ERROR: in case CONSOLE Memory not enough
  String[] fontList = PFont.list(); //To list all fonts available on system
@@ -39,7 +41,7 @@ String Georgia = "Georgia";
 titleFont = createFont (Georgia, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadfont() and createfont()
 //
-float fontSizeGeorgia = 45;
+float fontSizeGeorgia = 20;
 float DivHeightGeorgia = DivVeeHeight[0];
 //Hardcoded fontsizeGeorgia
 /* Aspect Ratio Manipulations (change to variables)
@@ -67,19 +69,19 @@ float constantDecrease = 0.99; //99% of original or 1% decrease
 //FOR Loop Error, Copy * Paste three times
 int iWhile=0;
 for ( int i=0; i<3; i++ ) {
-  while ( textWidth( title ) > DivVeeWidth[i] ) {
+  while ( textWidth( text[i] ) > DivVeeWidth[i] ) {
     iWhile++;
   //ERROR: infinite loop, requires exit() & println()
   fontSize *= constantDecrease; //Assignment Operator  //fontSize = fontSize*0.99;
   textFont(titleFont, fontSize); //see variable note
   } //End WHILE Error Check Text-wrap
-   println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", DivVeeWidth[i]-textWidth( title ), "\tUsing", constantDecrease*100+"%" );
+   println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", DivVeeWidth[i]-textWidth( text[i] ), "\tUsing", constantDecrease*100+"%" );
 } //End FOR Loop, Font Size Check in DIVs
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont() is better for more than one PFont Variable
 //
 for ( int i=0; i<3; i++) {
-  text( title, VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
+  text( text[i], VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
 }
 fill(resetInk);
