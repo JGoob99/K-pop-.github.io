@@ -1,7 +1,3 @@
-/* String
- */
-//
-//Display
 fullScreen(); //Landscape
 //size(500, 700); //Portrait
 int appWidth = displayWidth; //width
@@ -10,18 +6,23 @@ int appHeight = displayHeight; //height
 //println("\n\t\t\t\t\t\t\tFullScreen, displayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "height:"+height);
 //
 //Population
-float VeeX = appWidth*1.9/19.3;
-float VeeY = appHeight*0.55/13.7;
-float DivVeeWidth = appWidth*9.4/19.3;
-float DivVeeHeight = appHeight*7.85/13.7;
-float VeeX2 = appWidth * 1.9/19.3;
-float VeeY2 = appHeight * 10.15/13.7;
-float DivVeeWidth2 = appWidth * 9.4/19.3;
-float DivVeeHeight2 = appHeight * 0.95/13.7;
-float VeeX3 = appWidth * 1.9/19.3;
-float VeeY3 = appHeight * 8.4/13.7;
-float DivVeeWidth3 = appWidth * 9.4/19.3;
-float DivVeeHeight3 = appHeight * 1.75/13.7;
+int numberOfDIVs = 3;
+float[] VeeX = new float[numberOfDIVs];
+float[] VeeY = new float[numberOfDIVs];
+float[] DivVeeWidth = new float[numberOfDIVs];
+float[] DivVeeHeight = new float[numberOfDIVs];
+VeeX[0] = appWidth*1.9/19.3;
+VeeY[0] = appHeight*0.55/13.7;
+DivVeeWidth[0] = appWidth*9.4/19.3;
+DivVeeHeight[0] = appHeight*7.85/13.7;
+VeeX[1] = appWidth*1.9/19.3;
+VeeY[1] = appHeight*10.15/13.7;
+DivVeeWidth[1] = appWidth*9.4/19.3;
+DivVeeHeight[1] = appHeight*0.95/13.7;
+VeeX[2] = appWidth*1.9/19.3;
+VeeY[2] = appHeight*8.4/13.7;
+DivVeeWidth[2] = appWidth*9.4/19.3;
+DivVeeHeight[2] = appHeight*1.75/13.7;
 //
 //Strings, Text, Literal
 String title = "Yippee";
@@ -38,23 +39,20 @@ String Georgia = "Georgia";
 titleFont = createFont (Georgia, fontSize);
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadfont() and createfont()
 //
-println(fontSize, Georgia, titleFont);
-float fontSizeGeorgia = 200;
+float fontSizeGeorgia = 45;
+float DivHeightGeorgia = DivVeeHeight[0];
 //Hardcoded fontsizeGeorgia
-println("Font Size:", fontSize );
 /* Aspect Ratio Manipulations (change to variables)
  - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
  - Rewriting fontSize with formulae
  */
-float georgiaAspectRatio = fontSizeGeorgia / DivVeeHeight;
-fontSize = DivVeeHeight*georgiaAspectRatio;
-println("Georgia Aspect Ratio:", georgiaAspectRatio);
-println(); //Skip a line
+float GeorgiaAspectRatio = fontSizeGeorgia / DivHeightGeorgia;
+fontSize = DivVeeHeight[0]*GeorgiaAspectRatio;
 //
 //Note: DIV to "see" variables
-rect( VeeX, VeeY, DivVeeWidth, DivVeeHeight );
-rect( VeeX2, VeeY2, DivVeeWidth2, DivVeeHeight2 );
-rect( VeeX3, VeeY3, DivVeeWidth3, DivVeeHeight3 );
+for ( int i=0; i<numberOfDIVs; i++ ) {
+  rect( VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
+} //End FOR DIVs
 //
 //Drawing Text
 color cyanInk = #00F2C8; //Hexidecimal
@@ -66,13 +64,22 @@ textAlign (CENTER, CENTER); //Align X&Y, see Processing.org/Reference
 //ERROR Check fontSize, decreasing the text when wrapped or not shown
 textFont(titleFont, fontSize); //see variable note
 float constantDecrease = 0.99; //99% of original or 1% decrease
+//FOR Loop Error, Copy * Paste three times
+int iWhile=0;
+for ( int i=0; i<3; i++ ) {
+  while ( textWidth( title ) > DivVeeWidth[i] ) {
+    iWhile++;
+  //ERROR: infinite loop, requires exit() & println()
   fontSize *= constantDecrease; //Assignment Operator  //fontSize = fontSize*0.99;
   textFont(titleFont, fontSize); //see variable note
+  } //End WHILE Error Check Text-wrap
+   println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", DivVeeWidth[i]-textWidth( title ), "\tUsing", constantDecrease*100+"%" );
+} //End FOR Loop, Font Size Check in DIVs
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont() is better for more than one PFont Variable
 //
-text( title, VeeX, VeeY, DivVeeWidth, DivVeeHeight );
-text( title, VeeX, VeeY, DivVeeWidth, DivVeeHeight );
-text( title, VeeX, VeeY, DivVeeWidth, DivVeeHeight );
+for ( int i=0; i<3; i++) {
+  text( title, VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
+}
 fill(resetInk);
