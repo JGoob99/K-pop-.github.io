@@ -34,11 +34,23 @@ int appHeight = height;
 //
 //Music Loading - STRUCTURED Review
 minim = new Minim(this);
-
-
-
-
-playList[ currentSong ] = minim.loadfile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+String upArrow = "../../";
+String musicFolder = "Music/"; //Developer Specific
+String songName1 = "Music_Normal_Cycles";
+String fileExtension_mp3 = ".mp3";
 //
-println("Did the music and sound load properly");
-printArray(playList);
+String musicDirectory = upArrow + musicFolder; //Concatenation
+String file = musicDirectory + songName1 + fileExtension_mp3;
+println("Music Pathway", musicDirectory);
+println("Full Music File Pathway", file);
+
+playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+//
+if ( playList[currentSong]==null ) { //ERROR, play list is NULL
+  //See FILE or minim.loadFile
+  println("Did the music and sound load properly");
+  printArray(playList);
+}
+
+
+//Deal with NULL
