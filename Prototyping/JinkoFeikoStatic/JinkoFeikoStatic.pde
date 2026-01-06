@@ -20,5 +20,25 @@ import ddf.minim.ugens.*;
 //
 //Global Variables
 Minim minim; //initates entire class
-int numberOfSong = 1; //Best Practice
+int numberOfSongs = 1; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
+AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//
+//Display
+size(700, 500); //width //height
+//fullScreen(); //displayWidth //displayHeight
+int appWidth = width;
+int appHeight = height;
+//
+//Music Loading - STRUCTURED Review
+minim = new Minim(this);
+
+
+
+
+playList[ currentSong ] = minim.loadfile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+//
+println("Did the music and sound load properly");
+printArray(playList);
