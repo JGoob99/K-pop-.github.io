@@ -36,21 +36,27 @@ int appHeight = height;
 minim = new Minim(this);
 String upArrow = "../../";
 String musicFolder = "Music/"; //Developer Specific
+String soundEffectsFolder = "Sound Effects/";
 String songName1 = "Music_Normal_Cycles";
+String soundEffect1 = "yippee-tbh";
 String fileExtension_mp3 = ".mp3";
 //
 String musicDirectory = upArrow + musicFolder; //Concatenation
+String soundEffectsDirectory = upArrow + musicFolder + soundEffectsFolder; //Concatenation
 String file = musicDirectory + songName1 + fileExtension_mp3;
-println("Music Pathway", musicDirectory);
-println("Full Music File Pathway", file);
-
 playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3; //Rewritting FILE
+soundEffects[currentSong] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
 //
-if ( playList[currentSong]==null ) { //ERROR, play list is NULL
+if ( playList[currentSong]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
   //See FILE or minim.loadFile
-  println("Did the music and sound load properly");
+  println("The Play List or Sound Effects did not load properly");
   printArray(playList);
+  printArray(soundEffects);
+  /*
+  println("Music Pathway", musicDirectory);
+  println("Full Music File Pathway", file);
+  */
 }
-
-
-//Deal with NULL
+//
+//End Main PRogram
