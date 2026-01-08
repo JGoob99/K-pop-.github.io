@@ -20,7 +20,7 @@ int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
 void setup() {
   println(displayWidth, displayHeight);
   size(700, 500); //width //height
-  fullScreen(); //displayWidth //displayHeight
+  //fullScreen(); //displayWidth //displayHeight
   int appWidth = width;
   int appHeight = height;
   //
