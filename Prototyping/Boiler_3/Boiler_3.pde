@@ -27,6 +27,7 @@ color quitBackground, quitBackgroundActivated;
 Boolean nightMode=false;
 //
 void setup() {
+  //Display
   size(700, 500);
   //fullScreen();
   appWidth = width;
