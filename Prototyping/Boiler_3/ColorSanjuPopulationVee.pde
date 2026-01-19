@@ -1,7 +1,6 @@
 void colourPopulation() {
   nightModeVariables();
   buildingColours();
-  
 }//End Colour Population
 //
 void nightModeVariables() {
@@ -39,3 +38,17 @@ void buildingColours() {
     quitButtonInk = red;
   } else
   {
+        //End setup
+    //
+    resetBackground = resetBackgroundDay;
+    resetInk = darkblack;
+    playColourBackground = pink;
+    playColourSymbol = red;
+    playColourBackgroundActivated = red;
+    playColourSymbolActivated = cyan;
+    quitBackground = white;
+    quitBackgroundActivated = green;
+    quitButtonInk = darkblack;
+  }
+  //
+}

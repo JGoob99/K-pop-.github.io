@@ -52,20 +52,32 @@ void setup() {
   rect(exitX, exitY, exitWidth, exitHeight);
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
   //
-  //DIVs
-  //
+  //Colour Population
+  nightMode=false;
 } //End setup
 //
 void draw() {
 } //End draw
 //
 void mousePressed() {
+  if ( mouseX>imageX && mouseX<imageX+imageWidth && mouseY>imageY &&mouseY<imageY+imageHeight ) {
+    quitButton();
+  }
 } //End Mouse Pressed
 //
 void keyPressed() {
+  if (key=='Q' || key=='q') {
+    quitButton();
+  }
+  if (key=='D' || key=='d') {
+    colourPopulation();
+  } //Night Mode
 } //End Key Pressed
 //
 void quitButton() {
+  noLoop();
+  exit();
+  println("Final Line of mousePressed and finishes draw()");
 }//End Quit Button
 //
 //End MAIN Program
