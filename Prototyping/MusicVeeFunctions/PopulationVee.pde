@@ -2,7 +2,8 @@
 - divPopulation
 - colourPopulation(), colourPopulation
  */
-//
+//Global Variables
+float StringDivX, StringDivY, StringDivWidth, StringDivHeight
 void divPopulation() {
   imageX =  appWidth * 14.2/19.3;
   imageY =  appHeight * 11.1/13.7;
@@ -18,6 +19,11 @@ void divPopulation() {
   exitY = appHeight * 0/13.7;
   exitWidth = appWidth * 1.1/19.3;
   exitHeight = appHeight * 1.1/13.7;
+  //
+  stringDivX = appWidth*70/279;
+  stringDivY = appHeight*22/216;
+  stringDivWidth = appWidth*140/279;
+  stringDivHeight = appHeight*22/216;
 } //End DIV Population
 //
 void colourPopulation() {

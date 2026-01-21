@@ -25,6 +25,7 @@ void playDIV() {
 } // End Play Button DIV
 //
 void playButtonSymbol() {
+  triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }
 //
 void musicButtonShapes() {
