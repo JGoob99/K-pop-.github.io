@@ -68,7 +68,6 @@ textFont(titleFont, fontSize); //see variable note
 float constantDecrease = 0.99; //99% of original or 1% decrease
 //FOR Loop Error, Copy * Paste three times
 int iWhile=0;
-for ( int i=0; i<3; i++ ) {
   while ( textWidth( text[i] ) > DivVeeWidth[i] ) {
     iWhile++;
   //ERROR: infinite loop, requires exit() & println()
@@ -78,9 +77,6 @@ for ( int i=0; i<3; i++ ) {
    println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", DivVeeWidth[i]-textWidth( text[i] ), "\tUsing", constantDecrease*100+"%" );
 } //End FOR Loop, Font Size Check in DIVs
 //WHILE Error Check
-//textFont() has option to combine font declaration with textSize()
-//textFont() is better for more than one PFont Variable
-//
 for ( int i=0; i<3; i++) {
   text( text[i], VeeX[i], VeeY[i], DivVeeWidth[i], DivVeeHeight[i] );
 }

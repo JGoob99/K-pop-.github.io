@@ -3,7 +3,8 @@
 - colourPopulation(), colourPopulation
  */
 //Global Variables
-float StringDivX, StringDivY, StringDivWidth, StringDivHeight
+float StringDivX, StringDivY, StringDivWidth, StringDivHeight;
+color resetBlackInk, resetWhiteInk, purpleInk;
 void divPopulation() {
   imageX =  appWidth * 14.2/19.3;
   imageY =  appHeight * 11.1/13.7;
@@ -66,5 +67,9 @@ void colourPopulation() {
     quitButtonInk = darkblack;
   }
   //
+  //Ink
+  resetBlackInk = black;
+  resetWhiteInk = white;
+  purpleInk = #8B00FF;
 } //End Colour Population
 // End Subprogram Population

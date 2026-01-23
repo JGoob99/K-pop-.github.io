@@ -14,6 +14,7 @@ void quitButton() {
 void DIVs() {
   quitDIV();
   playDIV();
+  titleDIV();
 } //End DIVs
 //
 void quitDIV() {
