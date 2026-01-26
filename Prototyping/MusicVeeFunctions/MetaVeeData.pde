@@ -18,10 +18,11 @@
  Publisher: meta.publisher()
  Encoded: meta.encoded()
  */
-//Global Variable
+//
 void metaDataFileLoading() { //See Music / FOR / playList[ currentSong ] = minim.loadFile( file )
   playListMetaData[ currentSong ] = playList[ currentSong ].getMetaData();
 } //End Meta Data File Loading
+//
 void testMetaData() {
   //Print What is available on a particular song
   //See Image / Properties / Details
@@ -45,12 +46,12 @@ void testMetaData() {
 } //End Test Meta Data
 //
 void saveSongTitile() {
-if ( playList[currentSong].isPlaying() == true) {
-  //titleDIV();
-  songTitle = playListMetaData[currentSong].title();
-} else {
-  //titleDIV();
-  songTitle = "Nothing Playing";
-}
-}
+  if ( playList[currentSong].isPlaying() == true) {
+    titleDIV();
+    songTitle = playListMetaData[currentSong].title();
+  } else {
+    titleDIV();
+    songTitle = "Nothing Playing";
+  }
+}//
 //End Subprogram Music Meta Data

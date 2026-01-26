@@ -25,6 +25,10 @@ void playDIV() {
   rect(imageX, imageY, imageWidth, imageHeight);
 } // End Play Button DIV
 //
+void titleDIV() {
+  rect(imageX, imageY, imageWidth, imageHeight);
+}//End Play Button DIV
+//
 void playButtonSymbol() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }
